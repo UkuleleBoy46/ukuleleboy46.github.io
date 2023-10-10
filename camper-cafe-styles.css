@@ -2,6 +2,8 @@ body {
   background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
   padding: 20px;
+  background-repeat: no-repeat;
+                         background-size: cover;
 }
 
 h1 {
@@ -30,14 +32,14 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
-img {
+                         
+.img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: -25px;
+  font-size: 50px;
+  text-align: center;
 }
-
+                         
 hr {
   height: 2px;
   background-color: brown;
