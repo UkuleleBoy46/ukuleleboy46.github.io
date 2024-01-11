@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+  <title>AES-256 Encryption</title>
+</head>
+
+<body>
+  <h1>AES-256 Encryption with CryptoJS</h1>
+
+  <form id="encrypt" action="#">
+    <input id="plaintext" type="text" name="plaintext" placeholder="Plaintext" /></br>
+    <input id="secret" type="password" name="secret" placeholder="Secret" /></br>
+    <input type="submit" value="Encrypt!" />
+  </form>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  <script>
+    document.getElementById("encrypt").onsubmit = function (e) {
+      e.preventDefault();
+      var plaintextInput = document.getElementById("plaintext");
+      var secretInput = document.getElementById("secret");
+      var encrypted = Crypto.encrypt(plaintextInput.value, secretInput.value, true);
+      alert(encrypted);
+      console.log(encrypted)
+    };
+  </script>
+  <script>
+    document.getElementById("encrypt").onsubmit = function (e) {
+      e.preventDefault();
+      var plaintextInput = document.getElementById("plaintext");
+      var secretInput = document.getElementById("secret");
+      var encrypted = CryptoJS.AES.decrypt(plaintextInput.value, secretInput.value);
+      alert(encrypted);
+      console.log(encrypted)
+    };
+  </script>
+  sjcl.encrypt("password", "data")
+sjcl.cipher.encrypt("password", "data")
+  <h2>Note: this may not work as much as I want it to. I might not have finished this.</h2>
+</body>
+
+</html>

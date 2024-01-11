@@ -34,10 +34,10 @@ h1, h2, p {
 }
                          
 .img {
-  display: block;
+  display: block !important;
   margin-top: -25px;
-  font-size: 50px;
-  text-align: center;
+  font-size: 50px !important;
+  text-align: center !important;
 }
                          
 hr {

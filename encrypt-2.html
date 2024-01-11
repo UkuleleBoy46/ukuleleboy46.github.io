@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AES</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>AES Encryption with CryptoJS</h1>
+    <script>
+    function encrypt() {
+        var plaintextInput = document.getElementById("plaintext");
+        var secretInput = document.getElementById("secret");
+         var encrypted = CryptoJS.AES.encrypt(plaintextInput.value,secretInput.value);
+         document.getElementById("EncryptedValue").innerHTML = encrypted;
+         document.getElementById("decrypted").innerHTML = "";
+      }
+      function decrypt() {
+         var decrypted = CryptoJS.AES.decrypt(
+            document.getElementById("EncryptedValue").innerHTML,
+            document.getElementById("secret").value
+         ).toString(CryptoJS.enc.Utf8);
+         document.getElementById("decrypted").innerHTML = decrypted;
+         document.getElementById("EncryptedValue").innerHTML = "";
+      }
+   </script>
+   <br />Text:
+   <input id="plaintext" type="text" placeholder="Plain Text"/>
+   <br />Key: <input id="secret" type="text" value="cool" placeholder="Secret"/>
+   <br /><button onclick="encrypt()">Encrypt!</button>
+   <br />Encrypted Value:<br /><span id="EncryptedValue"></span>
+   <br />
+   <button onclick="decrypt()">Decrypt!</button>
+   <br />Decrypted Value: <span id="decrypted"></span>
+<h2>Note: this may not work. I might not have finished this.</h2>
+</body>
+</html>
